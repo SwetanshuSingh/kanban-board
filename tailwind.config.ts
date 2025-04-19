@@ -12,6 +12,7 @@ const config: Config = {
         dark: "var(--dark)",
         primary: "var(--primary)",
         secondary: "var(--secondary)",
+        lavendar: "var(--lavendar)",
       },
     },
   },

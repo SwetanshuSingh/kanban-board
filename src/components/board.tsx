@@ -25,14 +25,6 @@ const boardCol: BoardColData[] = [
   { id: "done", name: "Done" },
 ];
 
-// const data = [
-//   { id: 1, category: "to-do", title: "Walk the Dog" },
-//   { id: 2, category: "doing", title: "Run the Tests" },
-//   { id: 3, category: "done", title: "Complete Bundle Checks" },
-//   { id: 4, category: "to-do", title: "Attend the Meeting" },
-//   { id: 5, category: "done", title: "Walk 5 kilometer" },
-// ];
-
 export default function Board() {
   const [tasks, setTasks] = useState(data);
   const [activeTask, setActiveTask] = useState<Task | null>(null);
@@ -78,12 +70,12 @@ export default function Board() {
             activeTask={activeTask}
           />
         ))}
-        {/* <div className="w-1/4 h-fit py-4 flex justify-center items-center rounded-xl border border-dashed border-gray-300 cursor-pointer hover:bg-gray-100 hover:duration-200 hover:transition-colors">
+        <div className="w-1/4 h-fit py-4 flex justify-center items-center rounded-xl border border-dashed border-gray-300 cursor-pointer hover:bg-gray-100 hover:duration-200 hover:transition-colors">
           <span className="flex justify-center items-center gap-2 text-gray-500">
             <Plus size={16} />
             <p>Add Another List</p>
           </span>
-        </div> */}
+        </div>
         {createPortal(
           <DragOverlay>
             {activeTask && <DraggableTask task={activeTask} />}

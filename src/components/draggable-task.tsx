@@ -27,7 +27,7 @@ export function DraggableTask({ task }: DraggableTaskProps) {
 
   if (isDragging) {
     return (
-      <div className="w-full h-fit bg-white flex flex-col justify-between gap-3 p-3 rounded-xl animate-pulse">
+      <div className="w-full h-fit bg-gray-50 flex flex-col justify-between gap-3 p-3 rounded-xl animate-pulse">
         <span className="bg-amber-600 w-1/6 h-1.5 rounded-lg"></span>
 
         <div className="flex flex-col gap-0.5">

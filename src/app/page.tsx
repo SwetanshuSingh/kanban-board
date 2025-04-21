@@ -5,7 +5,7 @@ import { SquareKanban } from "lucide-react";
 export default function Page() {
   return (
     <main className="w-full h-screen bg-primary p-2 flex gap-10">
-      <Sidebar />
+      {/* <Sidebar /> */}
       <section className="w-full h-full p-6 flex flex-col gap-8">
         <SectionHeading />
         <SectionNavbar />

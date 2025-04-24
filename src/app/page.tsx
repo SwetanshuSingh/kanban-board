@@ -1,3 +1,4 @@
+import AddTask from "@/components/add-task-dialog";
 import Board from "@/components/board";
 import Sidebar from "@/components/sidebar";
 import { SquareKanban } from "lucide-react";
@@ -17,9 +18,9 @@ export default function Page() {
 
 function SectionHeading() {
   return (
-    <div className="flex items-center gap-4">
-      {/* <span className="w-10 h-10 rounded-lg bg-blue-50"></span> */}
+    <div className="w-full flex justify-between items-center gap-4">
       <h3 className="text-3xl font-semibold tracking-tight">Task Automate</h3>
+      <AddTask />
     </div>
   );
 }

@@ -38,9 +38,9 @@ export default function BoardColumn({
         ))}
       </div>
 
-      <span className="w-full px-2">
+      {/* <span className="w-full px-2">
         <AddTask />
-      </span>
+      </span> */}
     </div>
   );
 }

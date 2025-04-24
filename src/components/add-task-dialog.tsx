@@ -12,12 +12,13 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Plus } from "lucide-react";
+import CategorySelect from "./category-select";
 
 export default function AddTask() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <button className="w-full flex justify-center items-center px-2 py-2.5 rounded-lg gap-2 text-gray-500 hover:bg-white hover:text-black transition-colors duration-200">
+        <button className="min-w-[200px] w-fit flex justify-center items-center px-2 py-2.5 rounded-lg gap-2 bg-black text-white hover:bg-black/80 hover:text-gray-50 transition-colors duration-200">
           <Plus size={16} />
           <p>Add Task</p>
         </button>
@@ -36,6 +37,11 @@ export default function AddTask() {
           <div className="flex flex-col justify-start gap-1">
             <p className="">Description</p>
             <Input />
+          </div>
+
+          <div className="flex flex-col justify-start gap-1">
+            <p className="">Category</p>
+            <CategorySelect />
           </div>
         </div>
         <DialogFooter>

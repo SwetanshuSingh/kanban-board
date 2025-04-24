@@ -1,7 +1,8 @@
+"use client";
+
 import { useDroppable } from "@dnd-kit/core";
 import { DraggableTask } from "./draggable-task";
 import { BoardColId, Task } from "@/types";
-import { Plus } from "lucide-react";
 import AddTask from "./add-task-dialog";
 
 interface BoardColumnProps {
@@ -39,10 +40,6 @@ export default function BoardColumn({
 
       <span className="w-full px-2">
         <AddTask />
-        {/* <button className="w-full flex justify-center items-center px-2 py-2.5 rounded-lg gap-2 text-gray-500 hover:bg-white hover:text-black transition-colors duration-200">
-          <Plus size={16} />
-          <p>Add Task</p>
-        </button> */}
       </span>
     </div>
   );

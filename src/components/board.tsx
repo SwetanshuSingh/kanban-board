@@ -12,7 +12,6 @@ import { BoardColId, Task } from "@/types";
 import { Plus } from "lucide-react";
 import { data } from "@/lib/constants";
 import { DraggableTask } from "./draggable-task";
-import { createPortal } from "react-dom";
 
 interface BoardColData {
   id: BoardColId;
@@ -76,12 +75,9 @@ export default function Board() {
             <p>Add Another List</p>
           </span>
         </div>
-        {createPortal(
-          <DragOverlay>
-            {activeTask && <DraggableTask task={activeTask} />}
-          </DragOverlay>,
-          document.body
-        )}
+        <DragOverlay>
+          {activeTask && <DraggableTask task={activeTask} />}
+        </DragOverlay>
       </DndContext>
     </div>
   );

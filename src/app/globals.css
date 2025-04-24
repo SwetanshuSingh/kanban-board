@@ -6,5 +6,6 @@
   :root {
     --primary: #ffffff;
     --secondary: #EFF2FA;
+    --radius: 0.5rem;
   }
 }

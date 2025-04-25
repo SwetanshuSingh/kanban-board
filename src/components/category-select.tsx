@@ -7,12 +7,23 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { BoardColId, Task } from "@/types";
+import { SetStateAction } from "react";
 
-function CategorySelect() {
+interface CategorySelectProps {
+  category: BoardColId;
+  setNewTask: React.Dispatch<SetStateAction<Task>>;
+}
+
+function CategorySelect({ category, setNewTask }: CategorySelectProps) {
+  function handleValueChange(value: string) {
+    setNewTask((prev) => ({ ...prev, category: value as BoardColId }));
+  }
+
   return (
-    <Select>
+    <Select value={category} onValueChange={handleValueChange}>
       <SelectTrigger className="w-full">
-        <SelectValue placeholder="Select a Category" />
+        <SelectValue />
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>

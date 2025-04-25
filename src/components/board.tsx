@@ -12,6 +12,7 @@ import { BoardColId, Task } from "@/types";
 import { Plus } from "lucide-react";
 import { data } from "@/lib/constants";
 import { DraggableTask } from "./draggable-task";
+import useTaskStore from "@/store/task";
 
 interface BoardColData {
   id: BoardColId;
@@ -25,7 +26,8 @@ const boardCol: BoardColData[] = [
 ];
 
 export default function Board() {
-  const [tasks, setTasks] = useState(data);
+  const tasks = useTaskStore((state) => state.tasks);
+  const updateTaskCategory = useTaskStore((state) => state.updateTaskCategory);
   const [activeTask, setActiveTask] = useState<Task | null>(null);
 
   function handleDragStart(evt: DragStartEvent) {
@@ -45,16 +47,7 @@ export default function Board() {
     const taskId = active.id as string;
     const newCategory = over.id as BoardColId;
 
-    setTasks(() =>
-      tasks.map((task) =>
-        task.id === taskId
-          ? {
-              ...task,
-              category: newCategory,
-            }
-          : task
-      )
-    );
+    updateTaskCategory(taskId, newCategory);
   }
 
   return (

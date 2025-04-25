@@ -17,17 +17,19 @@ import { useState } from "react";
 import { Task } from "@/types";
 import useTaskStore from "@/store/task";
 
+const intialState: Task = {
+  id: "",
+  title: "",
+  category: "to-do",
+  description: "",
+  chatCount: 0,
+};
+
 export default function AddTask() {
   const tasks = useTaskStore((state) => state.tasks);
   const addTask = useTaskStore((state) => state.addTask);
 
-  const [newTask, setNewTask] = useState<Task>({
-    id: "",
-    title: "",
-    category: "to-do",
-    description: "",
-    chatCount: 0,
-  });
+  const [newTask, setNewTask] = useState<Task>(intialState);
 
   const [open, setOpen] = useState(false);
 
@@ -48,6 +50,7 @@ export default function AddTask() {
     };
 
     addTask(data);
+    setNewTask(intialState);
     setOpen(false);
   }
 
